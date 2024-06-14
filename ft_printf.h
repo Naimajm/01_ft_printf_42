@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:50:52 by juagomez          #+#    #+#             */
-/*   Updated: 2024/06/10 22:10:58 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/06/11 22:12:06 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ y obtener la longitud del número entero impreso.
 * @param num: Número entero que se escribirá en la salida estándar.
 * @returns void -> 
 */
-void	ft_putnbr(int num);
+int	ft_putnbr(int num);
 
 
-void	ft_putunsigned(unsigned int num);
+//void	ft_putunsigned(unsigned int num);
 
 /** 
 * @brief diseñada para escribir una cadena terminada en nulo en la salida 
@@ -65,7 +65,7 @@ estándar.
 en la salida estándar.
 * @returns void -> 
 */
-void	ft_putstr(char *str);
+int ft_putstr(char *str);
 
 /** 
 * @brief Toma un carácter 'c' como entrada y lo escribe en la salida estándar
@@ -74,8 +74,6 @@ normalmente utilizado para la impresión de caracteres en programas.
 * @param c: El carácter que se imprimirá en la salida estándar.
 * @returns void -> 
 */
-void	ft_putchar(char character);
-
-
+int ft_putchar(char character);
 
 #endif
