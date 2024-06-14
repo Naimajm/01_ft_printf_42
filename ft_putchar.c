@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 18:07:22 by juagomez          #+#    #+#             */
-/*   Updated: 2024/06/10 18:40:00 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/06/11 21:46:02 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 (descriptor de archivo 1). Luego devuelve el valor 1 para indicar éxito, 
 normalmente utilizado para la impresión de caracteres en programas. */
 
-void	ft_putchar(char character)
+int ft_putchar(char character)
 {
 	write(1, &character, 1);
+    return (1);
 }
