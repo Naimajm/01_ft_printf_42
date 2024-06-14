@@ -13,8 +13,10 @@ CC := cc
 CFLAGS := -Wall -Wextra -Werror
 
 # LISTADO FUNCIONES A INCLUIR EN BIBLIOTECA
-SRC := ft_printf.c \ 
-	ft_putnbr.c ft_putunsigned.c ft_putstr.c ft_putchar.c \
+SRC := ft_printf.c \
+	ft_putnbr.c  ft_putstr.c ft_putchar.c \
+
+# ft_putunsigned.c
 
 # NOMBRE SALIDA ARCHIVO BIBLIOTECA ".a"
 NAME = libftprintf.a
