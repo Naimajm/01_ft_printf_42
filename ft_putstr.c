@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 18:08:36 by juagomez          #+#    #+#             */
-/*   Updated: 2024/06/15 20:58:02 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/06/15 21:31:15 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ int	ft_putstr(char *str)
     return (count);
 }
 
-int	main(int argn, char **argv)
+/* int	main(int argn, char **argv)
 {
 	int num = ft_putstr(argv[1]);
 	if (argn > 1)
 		printf("\n num caracteres impresos: %d \n",num);
 	return (0);
-}
+} */
