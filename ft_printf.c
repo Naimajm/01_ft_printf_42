@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:51:11 by juagomez          #+#    #+#             */
-/*   Updated: 2024/06/11 22:13:36 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/06/17 11:38:34 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ específica.  */
 /* Los especificadores de conversión no admitidos o no válidos provocan que
 se devuelva un error (-1). */
 
-static void	ft_format(char specifier_format, va_list args_list);
+static int	ft_format_print(char specifier_format, va_list args_list);
 
 int	ft_printf(const char *format, ...)
 {
@@ -49,14 +49,14 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
+			specifier_format = format[index + 1];
+			chr_numbers = ft_format_print(specifier_format, args_list);
 			index++;
-			specifier_format = format[index];
-			ft_format(specifier_format, args_list);
 		}
 		else
 		{
-			ft_putchar(format[index]);
-			chr_numbers += 1;
+			ft_putchar(format[index]);	
+			chr_numbers++;
 		}
 		index++;
 	}
@@ -73,28 +73,28 @@ lista de argumentos variables. devuelve numero caracteres impresos.
 * @param args_list: Lista de argumentos variables (va_list).
 * @returns void -> 
 */
-static void	ft_format(char specifier_format, va_list args_list)
+static int	ft_format_print(char specifier_format, va_list args_list)
 {
-	//int chr_numbers;
+	int chr_numbers;
 
 	if (specifier_format == 'c')
 	{
-		ft_putchar(va_arg(args_list, int));
+		chr_numbers = ft_putchar(va_arg(args_list, int));
 	}
 	else if (specifier_format == 's')
 	{
-		ft_putstr(va_arg(args_list, char *));
+		chr_numbers = ft_putstr(va_arg(args_list, char *));
 	}
 	else if (specifier_format == 'd' || specifier_format == 'i')
 	{
-		ft_putnbr(va_arg(args_list, int));
+		chr_numbers = ft_putnbr(va_arg(args_list, int));
 	}
 	else if (specifier_format == '%')
-		ft_putchar('%');
-	//else
-		//return (-1);
+		chr_numbers = ft_putchar('%');
+	else
+		return (-1);
 		
-	//return (chr_numbers);
+	return (chr_numbers);
 }
 
 int	main(void)
@@ -109,25 +109,25 @@ int	main(void)
 	// CARACTERES CHAR -> especificador de formato %c
 	printf("caracteres char 'c' -> printf \n");
 	char chr1 = 'a'; 
-	resultado = ft_printf("%c\n", chr1);	
+	resultado = ft_printf("%cx\n", chr1);	
 	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
 
 	// STRINGS CHAR * -> especificador de formato %S
 	printf("Strings char* 's' -> printf \n");
 	char str1[] = "Hola";
-	resultado = ft_printf("%s\n", str1);	
+	resultado = ft_printf("%sx\n", str1);	
 	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
 	
 	// NUMEROS ENTEROS INT o DECIMALES -> especificador de formato %d
 	printf("numero enteros int 'd' -> printf \n");
 	int int1 = 12345;
-	resultado = ft_printf("%d\n", int1);	
+	resultado = ft_printf("%dx\n", int1);	
 	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
 
 	// NUMEROS ENTEROS INT o DECIMALES -> especificador de formato %d
 	printf("caracter '%%' -> printf \n");
 	char str2[] = "Ho%%la";
-	resultado = ft_printf("%s\n", str2);	
+	resultado = ft_printf("%sx\n", str2);	
 	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
 
 	return (0);
