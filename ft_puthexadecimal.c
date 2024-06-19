@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 20:28:28 by juagomez          #+#    #+#             */
-/*   Updated: 2024/06/19 19:29:21 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/06/19 21:10:16 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,14 @@ como en mayúsculas según el carácter de formato proporcionado. */
 
 int	ft_puthexadecimal(unsigned int num, char specifier_format)
 {
-	//unsigned int	int_num;
 	int				count;
 	char			*base_hexa;
 
-	//int_num = (unsigned int) num;
 	count = 0;
 	if (specifier_format == 'X')
 		base_hexa = "0123456789ABCDEF";
 	else
-		base_hexa = "0123456789abcdef";		
+		base_hexa = "0123456789abcdef";
 	if (num > (16 - 1))
 		count = count + ft_puthexadecimal(num / 16, specifier_format);
 	count = count + ft_putchar(base_hexa[num % 16]);
