@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 18:08:36 by juagomez          #+#    #+#             */
-/*   Updated: 2024/06/15 21:31:15 by juagomez         ###   ########.fr       */
+/*   Created: 2024/06/17 13:19:52 by juagomez          #+#    #+#             */
+/*   Updated: 2024/06/19 21:11:58 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ se utiliza para imprimir cadenas en la consola. */
 
 int	ft_putstr(char *str)
 {
-    int count;
+	int	count;
 
-    count = 0;
+	count = 0;
 	while (str[count] != '\0')
 	{
 		ft_putchar(str[count]);
-        count++;
+		count++;
 	}
-    return (count);
+	return (count);
 }
 
 /* int	main(int argn, char **argv)
