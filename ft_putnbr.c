@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 17:51:02 by juagomez          #+#    #+#             */
-/*   Updated: 2024/06/15 22:08:49 by juagomez         ###   ########.fr       */
+/*   Created: 2024/06/17 12:41:47 by juagomez          #+#    #+#             */
+/*   Updated: 2024/06/19 21:04:44 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_number_len(int num);
 int	ft_putnbr(int num)
 {
 	int	count;
-	
+
 	count = ft_number_len(num);
 	if (num == -2147483648)
 		ft_putstr("-2147483648");
@@ -30,16 +30,16 @@ int	ft_putnbr(int num)
 	{
 		ft_putchar('-');
 		num = num * -1;
-		ft_putnbr(num);		
+		ft_putnbr(num);
 	}
 	else if (num > 9)
 	{
-		ft_putnbr(num / 10);		
+		ft_putnbr(num / 10);
 		ft_putnbr(num % 10);
 	}
 	else
-		ft_putchar(num + '0');		
-	return (count);		
+		ft_putchar(num + '0');
+	return (count);
 }
 
 /** 
@@ -49,20 +49,20 @@ int	ft_putnbr(int num)
 */
 static int	ft_number_len(int num)
 {
-	int len;
-	
+	int	len;
+
 	len = 0;
 	if (num == -2147483648)
 		return (11);
 	if (num < 0)
-	{	
+	{
 		len++;
-		num = num * -1;		
+		num = num * -1;
 	}
 	while (num > 9)
 	{
-		num = num / 10;	
-		len++;		
+		num = num / 10;
+		len++;
 	}
 	return (len + 1);
 }
