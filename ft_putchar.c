@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 18:07:22 by juagomez          #+#    #+#             */
-/*   Updated: 2024/06/15 21:33:00 by juagomez         ###   ########.fr       */
+/*   Created: 2024/06/17 12:57:41 by juagomez          #+#    #+#             */
+/*   Updated: 2024/06/17 13:04:07 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 (descriptor de archivo 1). Luego devuelve el valor 1 para indicar éxito, 
 normalmente utilizado para la impresión de caracteres en programas. */
 
-int ft_putchar(char character)
+int	ft_putchar(char character)
 {
 	write(1, &character, 1);
-    return (1);
+	return (1);
 }
 
 /* int	main(int argn, char **argv)

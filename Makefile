@@ -7,16 +7,15 @@
 # ---------------------------------------------------
 
 # nombre compilador
-CC := cc
+CC := clang
 
 # flags de compilacion
 CFLAGS := -Wall -Wextra -Werror
 
 # LISTADO FUNCIONES A INCLUIR EN BIBLIOTECA
 SRC := ft_printf.c \
-	ft_putnbr.c  ft_putstr.c ft_putchar.c \
-
-# ft_putunsigned.c
+ft_putaddress.c ft_puthexadecimal.c ft_putunsigned.c ft_putnbr.c \
+ft_putstr.c ft_putchar.c \
 
 # NOMBRE SALIDA ARCHIVO BIBLIOTECA ".a"
 NAME = libftprintf.a
