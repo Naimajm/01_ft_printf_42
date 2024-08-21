@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:41:23 by juagomez          #+#    #+#             */
-/*   Updated: 2024/06/19 21:24:11 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/21 13:17:31 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ memoria que se convertirá e imprimirá.
 * @returns int -> número total de caracteres escritos en stdout, 
 incluido el prefijo "0x".
 */
-int	ft_putaddress(void *format);
+int	ft_putaddress(size_t ptr_address);
 
 /** 
 * @brief Útil para convertir e imprimir números enteros largos sin signo 

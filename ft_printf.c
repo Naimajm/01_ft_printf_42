@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:40:59 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/19 20:09:12 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:09:18 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ específica.  */
 /* Los especificadores de conversión no admitidos o no válidos provocan que
 se devuelva un error (-1). */
 
-int	ft_format_print(char specifier_format, va_list args_list);
+static int	ft_format_print(char specifier_format, va_list args_list);
 
 int	ft_printf(char const *format, ...)
 {
@@ -83,6 +83,8 @@ static int	ft_format_print(char specifier_format, va_list args_list)
 		chr_numbers = ft_putstr(va_arg(args_list, char *));
 	else if (specifier_format == 'x' || specifier_format == 'X')
 		chr_numbers = ft_puthexadecimal(va_arg(args_list, unsigned long), specifier_format);
+	else if (specifier_format == 'p')
+		chr_numbers = ft_putaddress(va_arg(args_list, size_t));
 	else if (specifier_format == 'u')
 		chr_numbers = ft_putunsigned(va_arg(args_list, unsigned int));
 	else if (specifier_format == 'd' || specifier_format == 'i')
