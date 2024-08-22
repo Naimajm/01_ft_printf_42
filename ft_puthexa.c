@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 20:28:28 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/22 18:12:02 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/22 19:01:03 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ int	ft_puthexa(unsigned long num, char specifier_format)
 	char			*base_hexa;
 
 	chars_number = 0;
-	if (num == 0)
-		return (ft_putstr("(nil)"));
 	if (specifier_format == 'X')
 		base_hexa = "0123456789ABCDEF";
 	else
@@ -37,11 +35,7 @@ int	ft_puthexa(unsigned long num, char specifier_format)
 /* int	main(void)
 {
 	unsigned int arg_num0 = 0;
-
-	unsigned int num_hexa_X = ft_puthexa(arg_num0, 'X');
-	printf("\n argumentos -> unsigned int '%X' \n", arg_num0);
-	printf("num caracteres impresos: %d \n",num_hexa_X);
-	
+		
 	unsigned int num_hexa_x = ft_puthexa(arg_num0, 'x');
 	printf("\n argumentos -> unsigned int '%x' \n", arg_num0);
 	printf("num caracteres impresos: %d \n",num_hexa_x);

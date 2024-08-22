@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:40:59 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/22 14:57:13 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:59:26 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,8 +127,7 @@ static int	ft_format_print(char sp_format, va_list args_list)
 
 	// NUMEROS ENTEROS INT -> especificador de formato %i
 	printf("NUMEROS ENTEROS INT (int) 'i' \n");
-	printf("numero enteros int 'd' \n");
-	int int1 = 12345;
+	int int1 = -12345;
 	resultado1 = printf("%i\n", int1);	
 	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
 	resultado = ft_printf("%i\n", int1);	
@@ -143,35 +142,34 @@ static int	ft_format_print(char sp_format, va_list args_list)
 	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
 
 	// NUMEROS ENTEROS SIN SIGNO 'UNSIGNED INT' -> especificador de formato %u
-	printf("NUMNEROS ENTEROS SIN SIGNO (unsigned int) 'u' \n");
+	printf("NUMEROS ENTEROS SIN SIGNO (unsigned int) 'u' \n");
 	unsigned int unsig_int1 = 567845;
-	resultado1 = printf("%i\n", unsig_int1);	
+	resultado1 = printf("%u\n", unsig_int1);	
 	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%i\n", unsig_int1);	
+	resultado = ft_printf("%u\n", unsig_int1);	
 	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
 
-	// NUMEROS EN HEXADECIMAL 'UNSIGNED int' -> especificador de formato %X o %x
-	printf("NUM HEXADECIMALES (unsigned int) 'x o X' \n");
+	// NUMEROS EN HEXADECIMAL 'UNSIGNED LONG' -> especificador de formato %X o %x
+	printf("NUM HEXADECIMALES (unsigned long) 'x o X' \n");
+
+	unsigned int unsig_int0 = 0;
+	resultado1 = printf("%x\n", unsig_int0);		
+	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
+	resultado = ft_printf("%x\n", unsig_int0);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado1);
+
 	unsigned int unsig_int2 = 567845;
 	resultado1 = printf("%x\n", unsig_int2);		
 	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
 	resultado = ft_printf("%x\n", unsig_int2);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado1);
 
 	resultado1 = printf("%X\n", unsig_int2);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n", resultado);
+	printf("%d numero caracteres imprimidos -> printf \n", resultado);
 	resultado = ft_printf("%X\n", unsig_int2);	
 	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);		
 
-	// DOBLE CARACTER '%' -> especificador de formato %%
-	printf("DOBLE CARACTER  (int) '%%' \n");
-	char str3[] = "Ho%%la";
-	resultado1 = printf("%s\n", str3);	
-	printf("%d numero caracteres imprimidos \n", resultado1);
-	resultado = ft_printf("%s\n", str3);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
-
-	// FORMATO HEXADECIMAL 'size_t' -> especificador formato %p
+	// DIRECCION PUNTERO EN HEXADECIMAL 'size_t' -> especificador formato %p
 	printf("DIRECCION PUNTERO EN FORMATO HEXADECIMAL (size_t) 'p' \n");
 	void *ptr_address = NULL;
 	resultado1 = printf("%p\n", ptr_address);	
@@ -184,6 +182,14 @@ static int	ft_format_print(char sp_format, va_list args_list)
 	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
 	resultado = ft_printf("%p\n", ptr_address1);	
 	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
+
+	// DOBLE CARACTER '%' -> especificador de formato %%
+	printf("DOBLE CARACTER  (int) '%%' \n");
+	char str3[] = "Ho%%la";
+	resultado1 = printf("%s\n", str3);	
+	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
+	resultado = ft_printf("%s\n", str3);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);	
 
 	return (0);
 } */
