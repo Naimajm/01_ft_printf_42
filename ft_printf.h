@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:41:23 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/22 12:55:57 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/22 14:42:16 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@
 
 # include <stdio.h>
 # include <stdarg.h>
-
-// INCLUSION ARCHIVO ENCABEZADO LIBRERIA "LIBFT.H"
-//# include "../LIBFT/libft.h"
-
 # include <unistd.h>
 
 // FUNCIONES PRINT  -----------------------------------
@@ -73,7 +69,7 @@ imprimirá como un número hexadecimal.
 'x' para minúsculas o 'X' para mayúsculas.
 * @returns int -> número total de caracteres escritos 
 */
-int	ft_puthexa(unsigned int num, char specifier_format);
+int	ft_puthexa(unsigned long num, char specifier_format);
 
 /** 
 * @brief Convertir e imprimir un entero largo sin signo como un número decimal

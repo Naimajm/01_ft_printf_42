@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:58:05 by juagomez          #+#    #+#             */
-/*   Updated: 2024/06/19 21:06:55 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/22 17:56:28 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,39 +17,19 @@ decimal. Utiliza recursividad para manejar cada dígito de la representación
 decimal, proporcionando una solución flexible y extensible para mostrar valores
 enteros sin signo. */
 
-static int	ft_unsigned_number_len(unsigned int num);
-
 int	ft_putunsigned(unsigned int num)
 {
-	int	count;
+	int	chars_number;
 
-	count = ft_unsigned_number_len(num);
+	chars_number = 0;
 	if (num > 9)
 	{
-		ft_putunsigned(num / 10);
+		chars_number += ft_putunsigned(num / 10);
 		ft_putunsigned(num % 10);
 	}
 	else
-		ft_putchar(num + '0');
-	return (count);
-}
-
-/** 
-* @brief Devuelve numero de digitos de un número.
-* @param num: Número entero a determinar.
-* @returns int -> número total de digitos.
-*/
-static int	ft_unsigned_number_len(unsigned int num)
-{
-	int	len;
-
-	len = 0;
-	while (num > 9)
-	{
-		num = num / 10;
-		len++;
-	}
-	return (len + 1);
+		chars_number += ft_putchar(num + '0');
+	return (chars_number);
 }
 
 /* int	main(void)

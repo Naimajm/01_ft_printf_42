@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:41:47 by juagomez          #+#    #+#             */
-/*   Updated: 2024/06/19 21:04:44 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/22 17:55:51 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,29 @@ la función ft_putnbr_fd. Además, devuelve la longitud (número de dígitos) de
 número entero impreso. La función auxiliar estática ft_nbrlen se utiliza 
 internamente para calcular la longitud del número entero. */
 
-static int	ft_number_len(int num);
+//static int	ft_number_len(int num);
 
 int	ft_putnbr(int num)
 {
-	int	count;
+	int	chars_number;
 
-	count = ft_number_len(num);
+	chars_number = 0;
 	if (num == -2147483648)
-		ft_putstr("-2147483648");
+		chars_number += ft_putstr("-2147483648");
 	else if (num < 0)
 	{
-		ft_putchar('-');
+		chars_number += ft_putchar('-');
 		num = num * -1;
 		ft_putnbr(num);
 	}
 	else if (num > 9)
 	{
-		ft_putnbr(num / 10);
+		chars_number += ft_putnbr(num / 10);
 		ft_putnbr(num % 10);
 	}
 	else
-		ft_putchar(num + '0');
-	return (count);
+		chars_number += ft_putchar(num + '0');
+	return (chars_number);
 }
 
 /** 
@@ -47,7 +47,7 @@ int	ft_putnbr(int num)
 * @param num: Número entero a determinar.
 * @returns int -> número total de digitos.
 */
-static int	ft_number_len(int num)
+/* static int	ft_number_len(int num)
 {
 	int	len;
 
@@ -65,7 +65,7 @@ static int	ft_number_len(int num)
 		len++;
 	}
 	return (len + 1);
-}
+} */
 
 /* int	main(void)
 {	

@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:19:52 by juagomez          #+#    #+#             */
-/*   Updated: 2024/06/19 21:11:58 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:07:19 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,19 @@ se utiliza para imprimir cadenas en la consola. */
 
 int	ft_putstr(char *str)
 {
-	int	count;
+	int	index;
+	int	chars_number;
 
-	count = 0;
-	while (str[count] != '\0')
+	index = 0;
+	chars_number = 0;
+	if (str == NULL)
+		return (ft_putstr("(nil)"));
+	while (str[index] != '\0')
 	{
-		ft_putchar(str[count]);
-		count++;
+		chars_number += ft_putchar(str[index]);
+		index++;
 	}
-	return (count);
+	return (chars_number);
 }
 
 /* int	main(int argn, char **argv)
