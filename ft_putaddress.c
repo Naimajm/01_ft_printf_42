@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 21:18:36 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/21 13:30:02 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:35:37 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,16 @@ diversos contextos, como la depuración o la visualización de información
 sobre la memoria asignada. */
 
 int	ft_putaddress(size_t ptr_address)
+{
+	size_t	char_number;
+
+	char_number = 0;
+	char_number += write (1, "0x", 2);
+	char_number += ft_puthexa(ptr_address, 'x');
+	return (char_number);
+}
+
+/* int	ft_putaddress( ptr_address)
 {
     char    string[25];
     int index;
@@ -47,7 +57,7 @@ int	ft_putaddress(size_t ptr_address)
         index--;
     }
     return (char_number);  
-}
+} */
 
 /* static  int ft_length_adress(char *ptr_address)
 {
@@ -60,7 +70,7 @@ int	ft_putaddress(size_t ptr_address)
     return (count);
 } */
 
-int main(void)
+/* int main(void)
 {   
     size_t ptr_address = 452397;
     char *str = NULL;
@@ -70,4 +80,4 @@ int main(void)
     printf("\n argumentos -> void * '%p' \n", str);
     printf("num caracteres impresos: %d \n", num_ptraddress);
     return (0);
-}
+} */

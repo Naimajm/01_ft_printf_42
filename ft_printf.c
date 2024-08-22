@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:40:59 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/21 12:09:18 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:35:54 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,27 +73,27 @@ lista de argumentos variables. devuelve numero caracteres impresos.
 * @param args_list: Lista de argumentos variables (va_list).
 * @returns void -> 
 */
-static int	ft_format_print(char specifier_format, va_list args_list)
+static int	ft_format_print(char sp_format, va_list args_list)
 {
-	int	chr_numbers;
-	
-	if (specifier_format == 'c') 
-		chr_numbers = ft_putchar(va_arg(args_list, int));
-	else if (specifier_format == 's')
-		chr_numbers = ft_putstr(va_arg(args_list, char *));
-	else if (specifier_format == 'x' || specifier_format == 'X')
-		chr_numbers = ft_puthexadecimal(va_arg(args_list, unsigned long), specifier_format);
-	else if (specifier_format == 'p')
-		chr_numbers = ft_putaddress(va_arg(args_list, size_t));
-	else if (specifier_format == 'u')
-		chr_numbers = ft_putunsigned(va_arg(args_list, unsigned int));
-	else if (specifier_format == 'd' || specifier_format == 'i')
-		chr_numbers = ft_putnbr(va_arg(args_list, int));
-	else if (specifier_format == '%')
-		chr_numbers = ft_putchar('%');
+	int	char_numbers;
+
+	if (sp_format == 'c')
+		char_numbers = ft_putchar(va_arg(args_list, int));
+	else if (sp_format == 's')
+		char_numbers = ft_putstr(va_arg(args_list, char *));
+	else if (sp_format == 'd' || sp_format == 'i')
+		char_numbers = ft_putnbr(va_arg(args_list, int));
+	else if (sp_format == 'u')
+		char_numbers = ft_putunsigned(va_arg(args_list, unsigned int));
+	else if (sp_format == 'x' || sp_format == 'X')
+		char_numbers = ft_puthexa(va_arg(args_list, unsigned int), sp_format);
+	else if (sp_format == 'p')
+		char_numbers = ft_putaddress(va_arg(args_list, size_t));
+	else if (sp_format == '%')
+		char_numbers = ft_putchar('%');
 	else
-		chr_numbers = -1;
-	return (chr_numbers);
+		char_numbers = -1;
+	return (char_numbers);
 }
 
 /* int	main(void)
@@ -122,26 +122,6 @@ static int	ft_format_print(char specifier_format, va_list args_list)
 	resultado = ft_printf("%s\n", str1);	
 	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
 
-	// NUMEROS EN HEXADECIMAL 'UNSIGNED int' -> especificador de formato %X o %x
-	printf("numero enteros SIN SIGNO unsigned long 'x o X' \n");
-	unsigned int unsig_int2 = 567845;
-	resultado1 = printf("%x\n", unsig_int2);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado1 = printf("%X\n", unsig_int2);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%x\n", unsig_int2);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n", resultado);
-	resultado = ft_printf("%X\n", unsig_int2);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);		
-
-	// NUMEROS ENTEROS SIN SIGNO 'UNSIGNED INT' -> especificador de formato %u
-	printf("numero enteros SIN SIGNO unsigned int 'u' \n");
-	unsigned int unsig_int1 = 567845;
-	resultado1 = printf("%i\n", unsig_int1);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%i\n", unsig_int1);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
-	
 	// NUMEROS ENTEROS INT -> especificador de formato %d
 	printf("numero enteros int 'd' \n");
 	int int1 = 12345;
@@ -158,6 +138,26 @@ static int	ft_format_print(char specifier_format, va_list args_list)
 	resultado = ft_printf("%d\n", int2);	
 	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
 
+	// NUMEROS ENTEROS SIN SIGNO 'UNSIGNED INT' -> especificador de formato %u
+	printf("numero enteros SIN SIGNO unsigned int 'u' \n");
+	unsigned int unsig_int1 = 567845;
+	resultado1 = printf("%i\n", unsig_int1);	
+	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
+	resultado = ft_printf("%i\n", unsig_int1);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
+
+	// NUMEROS EN HEXADECIMAL 'UNSIGNED int' -> especificador de formato %X o %x
+	printf("IMPRIMMIR NUM HEXADECIMALES (unsigned int) 'x o X' \n");
+	unsigned int unsig_int2 = 567845;
+	resultado1 = printf("%x\n", unsig_int2);	
+	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
+	resultado1 = printf("%X\n", unsig_int2);	
+	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
+	resultado = ft_printf("%x\n", unsig_int2);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n", resultado);
+	resultado = ft_printf("%X\n", unsig_int2);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);		
+
 	// DOBLE CARACTER '%' -> especificador de formato %%
 	printf("caracter '%%' -> printf \n");
 	char str2[] = "Ho%%la";
@@ -166,7 +166,18 @@ static int	ft_format_print(char specifier_format, va_list args_list)
 	resultado = ft_printf("%s\n", str2);	
 	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
 
-
+	// FORMATO HEXADECIMAL 'size_t' -> especificador de formato %p
+	printf("DIRECCION PUNTERO EN FORMATO HEXADECIMAL 'size_t' 'p' \n");
+	void *ptr_address = NULL;
+	resultado1 = printf("%p\n", ptr_address);	
+	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
+	resultado = ft_printf("%p\n", ptr_address);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
+	void *ptr_address1 = "Hola";
+	resultado1 = printf("%p\n", ptr_address1);	
+	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
+	resultado = ft_printf("%p\n", ptr_address1);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
 
 	return (0);
 } */
