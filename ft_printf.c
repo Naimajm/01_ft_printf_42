@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:40:59 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/22 18:59:26 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/22 20:29:37 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,101 +95,184 @@ static int	ft_format_print(char sp_format, va_list args_list)
 
 /* int	main(void)
 {
-	//TESTEO FUNCION PROTOTIPO PRINTF
-	char str[] = "Ho%l%a";
-	printf("TESTEO FUNCION PROTOTIPO PRINTF: \n");	
-	int resultado1 = printf("%s\n", str);
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	int resultado = ft_printf("%s\n",str);
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
-
 	// IMPRIMIR CARACTER CHAR -> especificador de formato %c
 	printf("CARACTER CHAR (int) 'c' \n");
 	char chr1 = 'a'; 
-	resultado1 = printf("%c\n", chr1);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%c\n", chr1);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
+	int res_printf = printf("%c\n", chr1);	
+	printf("%d numero caracteres imprimidos -> printf \n", res_printf);
+	int	res_ft_printf = ft_printf("%c\n", chr1);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", res_ft_printf);
 
 	// STRINGS CHAR * -> especificador de formato %S
 	printf("STRING CHAR* (char *) 's' \n");
 	char str1[25];
-	resultado1 = printf("%s\n", str1);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%s\n", str1);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
+	res_printf = printf("%s\n", str1);	
+	printf("%d numero caracteres imprimidos -> printf \n", res_printf);
+	res_ft_printf = ft_printf("%s\n", str1);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", res_ft_printf);
 
 	char str2[] = "Hola";
-	resultado1 = printf("%s\n", str2);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%s\n", str2);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
+	res_printf = printf("%s\n", str2);	
+	printf("%d numero caracteres imprimidos -> printf \n", res_printf);
+	res_ft_printf = ft_printf("%s\n", str2);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", res_ft_printf);
 
 	// NUMEROS ENTEROS INT -> especificador de formato %i
 	printf("NUMEROS ENTEROS INT (int) 'i' \n");
 	int int1 = -12345;
-	resultado1 = printf("%i\n", int1);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%i\n", int1);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
+	res_printf = printf("%i\n", int1);	
+	printf("%d numero caracteres imprimidos -> printf \n", res_printf);
+	res_ft_printf = ft_printf("%i\n", int1);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", res_ft_printf);
 
 	// NUMEROS DECIMALES -> especificador de formato %d
 	printf("NUMEROS DECIMALES (int) 'd' \n");
 	int int2 = 5678;
-	resultado1 = printf("%d\n", int2);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%d\n", int2);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
+	res_printf = printf("%d\n", int2);	
+	printf("%d numero caracteres imprimidos -> printf \n", res_printf);
+	res_ft_printf = ft_printf("%d\n", int2);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", res_ft_printf);
 
 	// NUMEROS ENTEROS SIN SIGNO 'UNSIGNED INT' -> especificador de formato %u
 	printf("NUMEROS ENTEROS SIN SIGNO (unsigned int) 'u' \n");
 	unsigned int unsig_int1 = 567845;
-	resultado1 = printf("%u\n", unsig_int1);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%u\n", unsig_int1);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
+	res_printf = printf("%u\n", unsig_int1);	
+	printf("%d numero caracteres imprimidos -> printf \n", res_printf);
+	res_ft_printf = ft_printf("%u\n", unsig_int1);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", res_ft_printf);
 
 	// NUMEROS EN HEXADECIMAL 'UNSIGNED LONG' -> especificador de formato %X o %x
 	printf("NUM HEXADECIMALES (unsigned long) 'x o X' \n");
 
 	unsigned int unsig_int0 = 0;
-	resultado1 = printf("%x\n", unsig_int0);		
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%x\n", unsig_int0);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado1);
+	res_printf = printf("%x\n", unsig_int0);		
+	printf("%d numero caracteres imprimidos -> printf \n", res_printf);
+	res_ft_printf = ft_printf("%x\n", unsig_int0);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", res_printf);
 
 	unsigned int unsig_int2 = 567845;
-	resultado1 = printf("%x\n", unsig_int2);		
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%x\n", unsig_int2);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado1);
+	res_printf = printf("%x\n", unsig_int2);		
+	printf("%d numero caracteres imprimidos -> printf \n", res_printf);
+	res_ft_printf = ft_printf("%x\n", unsig_int2);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", res_printf);
 
-	resultado1 = printf("%X\n", unsig_int2);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado);
-	resultado = ft_printf("%X\n", unsig_int2);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);		
+	res_printf = printf("%X\n", unsig_int2);	
+	printf("%d numero caracteres imprimidos -> printf \n", res_ft_printf);
+	res_ft_printf = ft_printf("%X\n", unsig_int2);	
+	printf("%d numero caract imprimidos -> ft_printf \n\n", res_ft_printf);		
 
 	// DIRECCION PUNTERO EN HEXADECIMAL 'size_t' -> especificador formato %p
 	printf("DIRECCION PUNTERO EN FORMATO HEXADECIMAL (size_t) 'p' \n");
 	void *ptr_address = NULL;
-	resultado1 = printf("%p\n", ptr_address);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%p\n", ptr_address);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
+	res_printf = printf("%p\n", ptr_address);	
+	printf("%d numero caracteres imprimidos -> printf \n", res_printf);
+	res_ft_printf = ft_printf("%p\n", ptr_address);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", res_ft_printf);
 	
 	void *ptr_address1 = "Hola";
-	resultado1 = printf("%p\n", ptr_address1);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%p\n", ptr_address1);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);
+	res_printf = printf("%p\n", ptr_address1);	
+	printf("%d numero caracteres imprimidos -> printf \n", res_printf);
+	res_ft_printf = ft_printf("%p\n", ptr_address1);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", res_ft_printf);
 
 	// DOBLE CARACTER '%' -> especificador de formato %%
 	printf("DOBLE CARACTER  (int) '%%' \n");
 	char str3[] = "Ho%%la";
-	resultado1 = printf("%s\n", str3);	
-	printf("%d numero caracteres imprimidos -> printf \n", resultado1);
-	resultado = ft_printf("%s\n", str3);	
-	printf("%d numero caracteres imprimidos -> ft_printf \n\n", resultado);	
+	res_printf = printf("%s\n", str3);	
+	printf("%d numero caracteres imprimidos -> printf \n", res_printf);
+	res_ft_printf = ft_printf("%s\n", str3);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n",
+		 res_ft_printf);	
+
+	// TEST 42 -----------------------------------------------------------
+
+	//TESTEO FUNCION PROTOTIPO PRINTF SIN BANDERAS
+	char str[] = "TESTEO FUNCION PROTOTIPO SIN BANDERAS: cspdiuxX";
+	res_printf = printf("%s\n", str);
+	printf("%d numero caracteres imprimidos -> printf \n", res_printf);
+	res_ft_printf = ft_printf("%s\n",str);
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n",
+		 res_ft_printf);
+
+	// TEST GESTION ERRORES '0, INTmin, str = ' ', ptr = NULL -------------
+	printf("TEST ESPECIFICADORES FORMATO MULTIPLES EN ORACION \n");
+	char *str_especial = "GESTION ERRORES -> string nulo %s, numero int 0 "
+	" %i y %d, numero int minimo %i, numero sin signo 0 %u, numero 
+	" hexadecimal 0 %X y %x, direccion puntero hexadecimal nula %p \n ";
+
+	char *string0 = "";
+	int num_int0 = 0;
+	int num_d0 = 0;
+	int num_int_min =  -2147483648;
+	unsigned int num_unsignedint0 = 0;
+	unsigned int num_hexa0 = 0;
+	void *ptr_address_2_0 = NULL;
+
+	res_printf = printf(str_especial, string0, num_int0, num_d0,
+		 num_int_min, num_unsignedint0,	num_unsignedint0, num_hexa0,
+		 num_hexa0, ptr_address_2_0);		
+	printf("%d numero caracteres imprimidos -> printf \n\n", res_printf);
+	res_ft_printf = ft_printf(str_especial, string0, num_int0, num_d0,
+		 num_int_min, num_unsignedint0,	num_unsignedint0, num_hexa0,
+		 num_hexa0, ptr_address_2_0);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n",
+		 res_ft_printf);
+
+	// TEST ESPECIFICADORES FORMATO MULTIPLES --------------------------------
+	printf("TEST ESPECIFICADORES FORMATO MULTIPLES EN ORACION \n");
+	char *str_multiple = "Ho%%la, caracter %c, string %s, "
+		" numero int %i y %d, numero sin signo %u, numero "
+		" hexadecimal %X y %x, direccion puntero hexadecimal %p \n ";
+	
+	char character = 'c';
+	char *string = "string";
+	int num_int = -234;
+	unsigned int num_unsignedint = 235;
+	unsigned int num_hexa = 23345654;
+	void *ptr_address_2 = "Hola";
+
+	res_printf = printf(str_multiple, character, string, num_int, num_int,
+		num_unsignedint, num_hexa, num_hexa, ptr_address_2);	
+	printf("%d numero caracteres imprimidos -> printf \n\n", res_printf);
+	res_ft_printf = ft_printf(str_multiple, character, string, num_int,
+		 num_int, num_unsignedint, num_hexa, num_hexa, ptr_address_2);	
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n",
+		 res_ft_printf);
+
+	// TEST ESPECIFICADORES INDENTICOS EN SUCESION -----------------------------
+	printf("TEST ESPECIFICADORES FORMATO MULTIPLES EN ORACION \n");
+	char *str_plus = " caracter1 %c, caracter2 %c \n string1 %s, string2 %s \n "
+		" numero int1 %i y %d, numero int2 %i y %d \n numero sin signo 1 %u, "
+		" numero sin signo 2 %u \n numero hexadecimal 1 %X y %x, numero "
+		" hexadecimal 2 %X y %x \n direccion puntero hexadecimal 1 %p, "
+		" direccion puntero hexadecimal 2 %p\n ";
+	
+	char character1 = 'c';
+	char character2 = 'd';
+	char *string1 = "string1";
+	char *string2= "string2";
+	int num_int1 = -234;
+	int num_int2 = -567;
+	int num_d1 = -234;
+	int num_d2 = -567;
+	unsigned int num_unsignedint1 = 235;
+	unsigned int num_unsignedint2 = 532;
+	unsigned int num_hexa1 = 23345654;	
+	unsigned int num_hexa2 = 567657567;
+	void *ptr_address_3 = "PUNTERO 1";
+	void *ptr_address_4 = "PUNTERO 2";
+
+	res_printf = printf(str_plus, character1, character2, string1, 
+		string2, num_int1, num_d1, num_int2, num_d2, num_unsignedint1, 
+		num_unsignedint2, num_hexa1, num_hexa1, num_hexa2, num_hexa2, 
+		ptr_address_3, ptr_address_4);	
+	printf("%d numero caracteres imprimidos -> printf \n\n", res_printf);
+	res_ft_printf = ft_printf(str_plus, character1, character2, string1, 
+		string2, num_int1, num_d1, num_int2, num_d2, num_unsignedint1, 
+		num_unsignedint2, num_hexa1, num_hexa1, num_hexa2, num_hexa2, 
+		ptr_address_3, ptr_address_4);
+	printf("%d numero caracteres imprimidos -> ft_printf \n\n", 
+		res_ft_printf);
 
 	return (0);
 } */

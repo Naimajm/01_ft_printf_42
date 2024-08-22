@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 20:28:28 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/22 19:01:03 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/22 19:28:16 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_puthexa(unsigned long num, char specifier_format)
 		base_hexa = "0123456789ABCDEF";
 	else
 		base_hexa = "0123456789abcdef";
-	if (num >= 16)
+	if (num > 16)
 		chars_number += ft_puthexa(num / 16, specifier_format);
 	chars_number += ft_putchar(base_hexa[num % 16]);
 	return (chars_number);
