@@ -6,11 +6,10 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:40:59 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/23 14:14:17 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/23 20:33:57 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libftprintf.h"
 #include "ft_printf.h"
 
 // https://42-cursus.gitbook.io/guide/rank-01/ft_printf/variadic-functions
@@ -91,10 +90,12 @@ static int	ft_format_print(char sp_format, va_list args_list)
 		chars_number = ft_putchar('%');
 	return (chars_number);
 }
-/* else
-		chars_number = -1; */
 
-/* int	main(void)
+/* 
+#include <stdio.h>
+#include <stdlib.h>
+
+int	main(void)
 {
 	// IMPRIMIR CARACTER CHAR -> especificador de formato %c
 	printf("CARACTER CHAR (int) 'c' \n");
@@ -198,10 +199,10 @@ static int	ft_format_print(char sp_format, va_list args_list)
 	// TEST GESTION ERRORES '0, INTmin, str = ' ', ptr = NULL -------------
 	printf("TEST ESPECIFICADORES FORMATO MULTIPLES EN ORACION \n");
 	char *str_especial = "GESTION ERRORES -> string nulo %s, numero int 0 "
-	" %i y %d, numero int minimo %i, numero sin signo 0 %u, numero 
+	" %i y %d, numero int minimo %i, numero sin signo 0 %u, numero " 
 	" hexadecimal 0 %X y %x, direccion puntero hexadecimal nula %p \n ";
 
-	char *string0 = "";
+	char *string0 = NULL;
 	int num_int0 = 0;
 	int num_d0 = 0;
 	int num_int_min =  -2147483648;
@@ -274,6 +275,54 @@ static int	ft_format_print(char sp_format, va_list args_list)
 		ptr_address_3, ptr_address_4);
 	printf("%d numero caracteres imprimidos -> ft_printf \n\n", 
 		res_ft_printf);
+
+	// TEST  printfTester ------------------------------------------------------
+
+	printf("TEST  printfTester \n");
+	printf("TEST 10 string \n");
+	char *str_0 = NULL;
+	printf(" NULL %s NULL \n", str_0);
+	ft_printf(" NULL %s NULL \n\n", str_0);
+
+	printf("TEST 04 direccion puntero \n");
+	printf(" %p \n", (void *)(16));
+	ft_printf(" %p \n\n", (void *)(16));
+
+	printf("TEST 09 direccion puntero \n");
+	printf(" %p %p \n", (void *)(0), (void *)(0));
+	ft_printf(" %p %p \n\n", (void *)(0), (void *)(0));
+
+	printf("TEST 24 num hexadecimal 'x' \n");
+	printf(" %x \n", 2147483647);
+	ft_printf(" %x \n\n", 2147483647);
+
+	printf("TEST 25 num hexadecimal 'x' \n");
+	printf(" %x \n", (unsigned int)-2147483648);
+	ft_printf(" %x \n\n", (unsigned int)-2147483648);
+
+	printf("TEST 27 num hexadecimal 'x' \n");
+	printf(" %x \n", (unsigned int) 4294967295);
+	ft_printf(" %x \n\n", (unsigned int) 4294967295);
+
+	printf("TEST 28 num hexadecimal 'x' \n");
+	printf(" %x \n", (unsigned int) 9223372036854775807LL);
+	ft_printf(" %x \n\n", (unsigned int) 9223372036854775807LL);
+
+	printf("TEST 24 num hexadecimal 'X' \n");
+	printf(" %X \n", 2147483647);
+	ft_printf(" %X \n\n", 2147483647);
+
+	printf("TEST 25 num hexadecimal 'X' \n");
+	printf(" %X \n", (unsigned int)-2147483648);
+	ft_printf(" %X \n\n", (unsigned int)-2147483648);
+
+	printf("TEST 27 num hexadecimal 'X' \n");
+	printf(" %X \n", (unsigned int) 4294967295);
+	ft_printf(" %X \n\n", (unsigned int) 4294967295);
+
+	printf("TEST 28 num hexadecimal 'X' \n");
+	printf(" %X \n", (unsigned int) 9223372036854775807LL);
+	ft_printf(" %X \n\n", (unsigned int) 9223372036854775807LL);
 
 	return (0);
 } */

@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:41:23 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/23 14:44:14 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/23 20:32:51 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_putnbr(int num);
 * @brief Convertir e imprimir una dirección de memoria (puntero vacío) en 
 formato hexadecimal a la salida estándar (stdout). Utiliza la función 
 auxiliar estática rec_print para la conversión e impresión reales. 
-* @param ptr_address: Puntero vacío que representa la dirección de 
+* @param ptr_address: Numero Puntero vacío que representa la dirección de 
 memoria que se convertirá e imprimirá.
 * @returns int -> número total de caracteres escritos en stdout, 
 incluido el prefijo "0x".

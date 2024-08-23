@@ -46,5 +46,8 @@ fclean: clean
 # NUEVA COMPILACION CON RECETA $(NAME)
 re: fclean all
 
-.PHONY: all clean fclean re
+test: all
+	$(CC) main.c $(NAME) -o test_executable
+
+.PHONY: all clean fclean re test
 
