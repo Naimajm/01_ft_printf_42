@@ -6,15 +6,11 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:57:41 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/23 20:31:46 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/23 20:52:58 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/* Toma un carácter 'c' como entrada y lo escribe en la salida estándar 
-(descriptor de archivo 1). Luego devuelve el valor 1 para indicar éxito, 
-normalmente utilizado para la impresión de caracteres en programas. */
 
 int	ft_putchar(char character)
 {

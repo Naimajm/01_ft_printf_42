@@ -6,17 +6,11 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 21:18:36 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/23 20:31:44 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/23 20:53:03 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/* Útil para mostrar direcciones de memoria en un formato hexadecimal estándar
-y legible con el prefijo “0x”. Proporciona una interfaz fácil de usar para 
-imprimir direcciones de memoria en la salida estándar y se puede utilizar en 
-diversos contextos, como la depuración o la visualización de información 
-sobre la memoria asignada. */
 
 static int	ft_puthex_address(unsigned long long num);
 

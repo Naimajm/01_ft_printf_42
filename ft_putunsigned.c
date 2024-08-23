@@ -6,16 +6,11 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:58:05 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/23 20:32:09 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/23 20:52:18 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/* Útil para convertir e imprimir números enteros largos sin signo en formato 
-decimal. Utiliza recursividad para manejar cada dígito de la representación 
-decimal, proporcionando una solución flexible y extensible para mostrar valores
-enteros sin signo. */
 
 int	ft_putunsigned(unsigned int num)
 {

@@ -6,15 +6,11 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 20:28:28 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/23 20:32:51 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/23 20:52:49 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/* diseñada para convertir e imprimir un 'entero largo sin signo' como un número
-hexadecimal en la salida estándar (stdout). Admite formato tanto en minúsculas
-como en mayúsculas según el carácter de formato proporcionado. */
 
 int	ft_puthexa(unsigned int num, char specifier_format)
 {

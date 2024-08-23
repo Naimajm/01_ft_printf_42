@@ -6,31 +6,11 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:40:59 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/23 20:33:57 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/23 20:53:58 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-// https://42-cursus.gitbook.io/guide/rank-01/ft_printf/variadic-functions
-// https://42.nauman.cc/2023/08/16/ft-printf-ft-printf/
-
-/* implementación personalizada de la función printf en C, que proporciona 
-un subconjunto simplificado de opciones de formato para cadenas de caracteres. 
-Toma una cadena de formato como entrada y, cuando encuentra un carácter % de 
-marcador de posición seguido de un especificador de conversión, procesa e 
-imprime los valores correspondientes. */
-
-//PROCESO
-/* Procesa el especificador de formato y los argumentos correspondientes e 
-imprime la salida formateada en la salida estándar utilizando el descriptor de 
-archivo especificado. Devuelve el número total de caracteres escritos en la 
-salida estándar. */
-/* Para cada especificador de conversión válido, la función llama a la función
-auxiliar estática ft_format para manejar la lógica de formato e impresión 
-específica.  */
-/* Los especificadores de conversión no admitidos o no válidos provocan que
-se devuelva un error (-1). */
 
 static int	ft_format_print(char specifier_format, va_list args_list);
 
@@ -60,15 +40,6 @@ int	ft_printf(char const *format, ...)
 	return (chars_number);
 }
 
-/** 
-* @brief Maneja la lógica de formato e impresión específica. Responsable de 
-formatear e imprimir valores según el especificador de conversión. 
-Utiliza la macro 'va_arg' para recuperar el argumento correspondiente de la
-lista de argumentos variables. devuelve numero caracteres impresos.
-* @param especifier_format: Especificador de conversión de formato.
-* @param args_list: Lista de argumentos variables (va_list).
-* @returns void -> 
-*/
 static int	ft_format_print(char sp_format, va_list args_list)
 {
 	int	chars_number;

@@ -6,16 +6,11 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:41:47 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/23 20:31:44 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/23 20:52:43 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/* Diseñada para escribir un número entero en la salida estándar (stdout) usando
-la función ft_putnbr_fd. Además, devuelve la longitud (número de dígitos) del
-número entero impreso. La función auxiliar estática ft_nbrlen se utiliza 
-internamente para calcular la longitud del número entero. */
 
 int	ft_putnbr(int num)
 {
