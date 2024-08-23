@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 12:40:59 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/22 20:29:37 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/23 14:14:17 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ static int	ft_format_print(char sp_format, va_list args_list)
 {
 	int	chars_number;
 
+	chars_number = 0;
 	if (sp_format == 'c')
 		chars_number = ft_putchar(va_arg(args_list, int));
 	else if (sp_format == 's')
@@ -83,15 +84,15 @@ static int	ft_format_print(char sp_format, va_list args_list)
 	else if (sp_format == 'u')
 		chars_number = ft_putunsigned(va_arg(args_list, unsigned int));
 	else if (sp_format == 'x' || sp_format == 'X')
-		chars_number = ft_puthexa(va_arg(args_list, unsigned long), sp_format);
+		chars_number = ft_puthexa(va_arg(args_list, unsigned int), sp_format);
 	else if (sp_format == 'p')
-		chars_number = ft_putaddress(va_arg(args_list, size_t));
+		chars_number = ft_putaddress(va_arg(args_list, unsigned long long));
 	else if (sp_format == '%')
 		chars_number = ft_putchar('%');
-	else
-		chars_number = -1;
 	return (chars_number);
 }
+/* else
+		chars_number = -1; */
 
 /* int	main(void)
 {

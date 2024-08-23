@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:19:52 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/22 18:07:19 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/23 13:40:05 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_putstr(char *str)
 	index = 0;
 	chars_number = 0;
 	if (str == NULL)
-		return (ft_putstr("(nil)"));
+		return (ft_putstr("(null)"));
 	while (str[index] != '\0')
 	{
 		chars_number += ft_putchar(str[index]);

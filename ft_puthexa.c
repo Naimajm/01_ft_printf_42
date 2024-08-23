@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 20:28:28 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/22 19:28:16 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/23 14:04:08 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 hexadecimal en la salida estándar (stdout). Admite formato tanto en minúsculas
 como en mayúsculas según el carácter de formato proporcionado. */
 
-int	ft_puthexa(unsigned long num, char specifier_format)
+int	ft_puthexa(unsigned int num, char specifier_format)
 {
-	unsigned long	chars_number;
+	unsigned int	chars_number;
 	char			*base_hexa;
 
 	chars_number = 0;
@@ -26,9 +26,9 @@ int	ft_puthexa(unsigned long num, char specifier_format)
 		base_hexa = "0123456789ABCDEF";
 	else
 		base_hexa = "0123456789abcdef";
-	if (num > 16)
-		chars_number += ft_puthexa(num / 16, specifier_format);
-	chars_number += ft_putchar(base_hexa[num % 16]);
+	if (num >= 16)
+		chars_number += ft_puthexa((num / 16), specifier_format);
+	chars_number += ft_putchar(base_hexa[(num % 16)]);
 	return (chars_number);
 }
 

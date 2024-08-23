@@ -6,7 +6,7 @@
 /*   By: juagomez <juagomez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 21:18:36 by juagomez          #+#    #+#             */
-/*   Updated: 2024/08/22 18:05:59 by juagomez         ###   ########.fr       */
+/*   Updated: 2024/08/23 14:50:52 by juagomez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,30 @@ imprimir direcciones de memoria en la salida estándar y se puede utilizar en
 diversos contextos, como la depuración o la visualización de información 
 sobre la memoria asignada. */
 
-int	ft_putaddress(size_t ptr_address)
+static int	ft_puthex_address(unsigned long long num);
+
+int	ft_putaddress(unsigned long long ptr_address)
 {
-	size_t	chars_number;
+	int	chars_number;
 
 	chars_number = 0;
 	if (ptr_address == 0)
 		return (ft_putstr("(nil)"));
 	chars_number += ft_putstr("0x");
-	chars_number += ft_puthexa(ptr_address, 'x');
+	chars_number += ft_puthex_address(ptr_address);
+	return (chars_number);
+}
+
+static int	ft_puthex_address(unsigned long long num)
+{
+	unsigned int	chars_number;
+	char			*base_hexa;
+
+	chars_number = 0;
+	base_hexa = "0123456789abcdef";
+	if (num >= 16)
+		chars_number += ft_puthex_address(num / 16);
+	chars_number += ft_putchar(base_hexa[num % 16]);
 	return (chars_number);
 }
 
